@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Click_Theme
+ * @package imobi_Theme
  */
 
 get_header(); ?>

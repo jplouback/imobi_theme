@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Click_Theme
+ * @package imobi_Theme
  */
 
 /**
@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function click_body_classes( $classes ) {
+function imobi_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -26,14 +26,14 @@ function click_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'click_body_classes' );
+add_filter( 'body_class', 'imobi_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function click_pingback_header() {
+function imobi_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
-add_action( 'wp_head', 'click_pingback_header' );
+add_action( 'wp_head', 'imobi_pingback_header' );

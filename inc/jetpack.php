@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Click_Theme
+ * @package imobi_Theme
  */
 
 /**
@@ -13,23 +13,23 @@
  * See: https://jetpack.com/support/infinite-scroll/
  * See: https://jetpack.com/support/responsive-videos/
  */
-function click_jetpack_setup() {
+function imobi_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'click_infinite_scroll_render',
+		'render'    => 'imobi_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
 }
-add_action( 'after_setup_theme', 'click_jetpack_setup' );
+add_action( 'after_setup_theme', 'imobi_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function click_infinite_scroll_render() {
+function imobi_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

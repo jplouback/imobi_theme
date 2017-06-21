@@ -1,13 +1,13 @@
 <?php
 /**
- * Click Theme functions and definitions
+ * imobi Theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Click_Theme
+ * @package imobi_Theme
  */
 
-if ( ! function_exists( 'click_setup' ) ) :
+if ( ! function_exists( 'imobi_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'click_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function click_setup() {
+function imobi_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Click Theme, use a find and replace
-	 * to change 'click' to the name of your theme in all the template files.
+	 * If you're building a theme based on imobi Theme, use a find and replace
+	 * to change 'imobi' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'click', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'imobi', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,8 +44,8 @@ function click_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'click' ),
-		'menu-footer' => esc_html__( 'Footer', 'click' ),
+		'menu-1' => esc_html__( 'Primary', 'imobi' ),
+		'menu-footer' => esc_html__( 'Footer', 'imobi' ),
 	) );
 
 	/*
@@ -61,7 +61,7 @@ function click_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'click_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'imobi_custom_background_args', array(
 		'default-color' => 'navy',
 		'default-image' => '',
 		'default-repeat'         => '',
@@ -73,7 +73,7 @@ function click_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
-add_action( 'after_setup_theme', 'click_setup' );
+add_action( 'after_setup_theme', 'imobi_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -82,50 +82,71 @@ add_action( 'after_setup_theme', 'click_setup' );
  *
  * @global int $content_width
  */
-function click_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'click_content_width', 640 );
+function imobi_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'imobi_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'click_content_width', 0 );
+add_action( 'after_setup_theme', 'imobi_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function click_widgets_init() {
+function imobi_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'click' ),
+		'name'          => esc_html__( 'Sidebar', 'imobi' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Widgets do Template.', 'click' ),
+		'description'   => esc_html__( 'Widgets do Template.', 'imobi' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'click_widgets_init' );
+add_action( 'widgets_init', 'imobi_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function click_scripts() {
+function imobi_scripts() {
+
 	wp_enqueue_style( 'default', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
-	wp_enqueue_style( 'theme-bootstrap', get_template_directory_uri() . '/css/flatly-bootstrap.min.css' );
 	
-	wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/click-style.css' );
+	// fila de css
+	wp_enqueue_style( 'icons', get_template_directory_uri() . '/css/simple-line-icons.css' );
+	wp_enqueue_style( 'font_default', 'http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700' );
+	wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/layout.css' );
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css' );
+	wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/imobi-style.css' );
+	
 
-	wp_enqueue_script( 'click-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '', true );
+	wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array("jquery"), '', true );
+	wp_enqueue_script( 'imobi-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '2017', true );
+	
+	// scripts plugins
+	wp_enqueue_script( 'jquery-migrate','https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'easing', get_template_directory_uri() . '/js/vendor/jquery.easing.js', array(), '2017', true );
+	wp_enqueue_script( 'jquery-back-to-top', get_template_directory_uri() . '/js/vendor/jquery.back-to-top.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/vendor/jquery.smooth-scroll.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'jquery-wow-min', get_template_directory_uri() . '/js/vendor/jquery.wow.min.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'jquery-parallax', get_template_directory_uri() . '/js/vendor/jquery.parallax.min.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'jquery-appear', get_template_directory_uri() . '/js/vendor/jquery.appear.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'jquery-masonry-pkgd-min', get_template_directory_uri() . '/js/vendor/jquery.masonry.pkgd.min.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'imagesloaded.pkgd.min', get_template_directory_uri() . '/js/vendor/imagesloaded.pkgd.min.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'masonry-min', get_template_directory_uri() . '/js/vendor/masonry.min.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'wow-min', get_template_directory_uri() . '/js/vendor/wow.min.js', array("jquery"), '2017', true );
 
-	wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array(), '', true );
-	wp_enqueue_script( 'click-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '2017', true );
+	// Scripts page
+	wp_enqueue_script( 'layout-js', get_template_directory_uri() . '/js/layout.js', array("jquery"), '2017', true );
+	wp_enqueue_script( 'progress-bar', get_template_directory_uri() . '/js/progress-bar.min.js', array("jquery"), '2017', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'click_scripts' );
+add_action( 'wp_enqueue_scripts', 'imobi_scripts' );
 
 /**
  * Implement the Custom Header feature.

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Click_Theme
+ * @package imobi_Theme
  */
 
 ?>
@@ -19,7 +19,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'click' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'imobi' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -31,7 +31,7 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'click' ),
+						esc_html__( 'Edit %s', 'imobi' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					),
 					'<span class="edit-link">',

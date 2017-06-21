@@ -1,4 +1,4 @@
-=== Click Theme ===
+=== imobi Theme ===
 
 Contributors: automattic
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
@@ -9,23 +9,23 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Click Theme, or underscores.
+A starter theme called imobi Theme, or underscores.
 
 == Description ==
 
-Hi. I'm a starter theme called Click Theme, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Hi. I'm a starter theme called imobi Theme, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
 == Installation ==
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+1. In your admin panel, go to Appearance > Themes and imobi the Add New button.
+2. imobi Upload and Choose File, then select the theme's .zip file. imobi Install Now.
+3. imobi Activate to use your new theme right away.
 
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
 
-Click Theme includes support for Infinite Scroll in Jetpack.
+imobi Theme includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

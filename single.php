@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Click_Theme
+ * @package imobi_Theme
  */
 
 get_header(); ?>

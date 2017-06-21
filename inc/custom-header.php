@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Click_Theme
+ * @package imobi_Theme
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses click_header_style()
+ * @uses imobi_header_style()
  */
-function click_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'click_custom_header_args', array(
+function imobi_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'imobi_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'click_header_style',
+		'wp-head-callback'       => 'imobi_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'click_custom_header_setup' );
+add_action( 'after_setup_theme', 'imobi_custom_header_setup' );
 
-if ( ! function_exists( 'click_header_style' ) ) :
+if ( ! function_exists( 'imobi_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see click_custom_header_setup().
+ * @see imobi_custom_header_setup().
  */
-function click_header_style() {
+function imobi_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

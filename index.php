@@ -9,10 +9,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Click_Theme
+ * @package imobi_Theme
  */
 
-get_header(); ?>
+get_header(); 
+
+
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -26,7 +29,7 @@ get_header(); ?>
 								<header>
 									<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 								</header>
-
+								
 							<?php
 							endif;
 
