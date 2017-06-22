@@ -39,7 +39,7 @@
 
                 <!-- Logo -->
                 <div class="logo">
-                    <a class="logo-wrap" href="#body">
+                    <a class="logo-wrap" href="/">
                         <img class="logo-img logo-img-main" src="<?=  get_template_directory_uri(); ?>/img/logo.png" alt="Asentus Logo">
                         <img class="logo-img logo-img-active" src="<?=  get_template_directory_uri(); ?>/img/logo-dark.png" alt="Asentus Logo">
                     </a>
@@ -47,22 +47,6 @@
                 <!-- End Logo -->
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <!-- <div class="collapse navbar-collapse nav-collapse">
-                <div class="menu-container">
-
-                    <ul class="nav navbar-nav navbar-nav-right">
-                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#body">Home</a></li>
-                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#about">About</a></li>
-                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#experience">Experience</a></li>
-                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#work">Work</a></li>
-                        <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contact">Contact</a></li>
-                    </ul>
-
-
-                </div>
-            </div> -->
-            <!-- End Navbar Collapse -->
             <div class="collapse navbar-collapse nav-collapse">
                 <?php 
                     wp_nav_menu( 
@@ -84,7 +68,7 @@
 <!--========== END HEADER ==========-->
 
 <?php 
-    if ( !is_home() ) {
+    if ( is_front_page() ) {
         require_once 'inc/front_slider.php';
     }
  ?>
