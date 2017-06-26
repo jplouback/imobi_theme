@@ -671,7 +671,7 @@ fieldset[disabled] .btn-theme {
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
 }
 
-.header .menu-item:hover .menu-item-hover:after {
+.header .menu-item:hover a:after {
   opacity: 1;
   transition-duration: 400ms;
   transition-property: all;

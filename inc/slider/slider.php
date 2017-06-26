@@ -26,6 +26,7 @@
             });
         </script>
     <?php }
+    
     add_action( 'wp_head', 'wptuts_slider_initialize' );
 
     // Create Slider
