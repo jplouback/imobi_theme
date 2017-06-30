@@ -1,34 +1,4 @@
 <?php 
-// function menu_theme_options() {
-// 	function dashboard_theme_options() {
-// 		require_once '/view/options-form.php';
-// 	}
-
-// 	add_menu_page( 'Imobi setup', 'Imobi setup', 'administrator', 'imobi_setup_theme', 'dashboard_theme_options', 'dashicons-layout', 59 );
-	
-// }
-
-
-// add_action('admin_menu', 'menu_theme_options');
-
-// ======================================================================
-
-/**
- * Função que adiciona página de configuração no admin
- */
-// function imobi_options_page() {
-//     add_menu_page( 'Imobi setup', 'Imobi setup', 'manage_options', 'imobi_setup_theme', 'imobi_options_page_html', 'dashicons-layout', 59 );
-// }
- 
-/**
- * registra a função imobi_options_page no admin_menu action hook
- */
-// add_action( 'admin_menu', 'imobi_options_page' );
- 
-// function imobi_options_page_html() {
-//     echo "imobi_options_page_html";
-// }
-
 
 /*
     
@@ -38,38 +8,39 @@
         ADMIN PAGE
     ========================
 */
-function sunset_add_admin_page() {
+
+function imobi_add_admin_page() {
     
-    //Generate Sunset Admin Page
-    add_menu_page( 'Sunset Theme Options', 'Sunset', 'manage_options', 'alecaddd_sunset', 'sunset_theme_create_page', get_template_directory_uri() . '/img/sunset-icon.png', 110 );
-    
-    //Generate Sunset Admin Sub Pages
-    add_submenu_page( 'alecaddd_sunset', 'Sunset Theme Options', 'General', 'manage_options', 'alecaddd_sunset', 'sunset_theme_create_page' );
-    add_submenu_page( 'alecaddd_sunset', 'Sunset CSS Options', 'Custom CSS', 'manage_options', 'alecaddd_sunset_css', 'sunset_theme_settings_page');
-    
-    
+    //Gera Admin Page
+    add_menu_page( 'Opções do Thema Imobi', 'Theme Options', 'manage_options', 'imobi_theme', 'imobi_theme_create_page', 'dashicons-layout', 59 );
+    //add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
     
 }
-add_action( 'admin_menu', 'sunset_add_admin_page' );
+
+add_action( 'admin_menu', 'imobi_add_admin_page' );
+
 //Activate custom settings
-    add_action( 'admin_init', 'sunset_custom_settings' );
-function sunset_custom_settings() {
-    register_setting( 'sunset-settings-group', 'first_name' );
-    add_settings_section( 'sunset-sidebar-options', 'Sidebar Option', 'sunset_sidebar_options', 'alecaddd_sunset');
-    add_settings_field( 'sidebar-name', 'First Name', 'sunset_sidebar_name', 'alecaddd_sunset', 'sunset-sidebar-options');
+add_action( 'admin_init', 'imobi_custom_settings' );
+
+function imobi_custom_settings() {
+    // Registrando opções de cores
+    // Para cada registro, deve ter uma função que crie o input com o name igual ao segundo parametro ($option_name)
+    register_setting( 'imobi-settings-group', 'imobi_color_base' );
+    register_setting( 'imobi-settings-group', 'imobi_second_color' );
+
+    add_settings_section( 'imobi-color-options', 'Opções de cores do Thema', 'imobi_colors_options', 'imobi_theme');
+    // add_settings_section( $id, $title, $callback, $page );
+    // add_settings_field( 'color-base', 'Cor Principal', 'func_colorBase', 'imobi_theme', 'imobi-color-options');
+    // add_settings_field( 'second-color', 'Cor Secundária', 'func_secoundColor', 'imobi_theme', 'imobi-color-options');
+    // add_settings_field( $id, $title, $callback, $page, $section, $args );
 }
-function sunset_sidebar_options() {
-    echo 'Customize your Sidebar Information';
+
+function imobi_colors_options() {
+    echo 'Customize suas cores';
 }
-function sunset_sidebar_name() {
-    $firstName = esc_attr( get_option( 'first_name' ) );
-    echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First Name" />';
+
+
+function imobi_theme_create_page() {
+    require_once( get_template_directory() . '/inc/templates/imobi-admin.php' );
 }
-function sunset_theme_create_page() {
-    require_once( get_template_directory() . '/inc/templates/sunset-admin.php' );
-}
-function sunset_theme_settings_page() {
-    
-    echo '<h1>Sunset Custom CSS</h1>';
-    
-}
+

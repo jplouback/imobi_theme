@@ -44,7 +44,7 @@ if ( ! function_exists( 'imobi_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'imobi' ),
+			'menu-1' => esc_html__( 'Principal', 'imobi' ),
 			'menu-footer' => esc_html__( 'Footer', 'imobi' ),
 		) );
 
@@ -60,19 +60,13 @@ if ( ! function_exists( 'imobi_setup' ) ) :
 			'caption',
 		) );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'imobi_custom_background_args', array(
-			'default-color' => 'navy',
-			'default-image' => '',
-			'default-repeat'         => '',
-			'default-position-x'     => '',
-			'default-attachment'     => '',
-		) ) );
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		require_once 'inc/required-plugins-mensages.php';
+
+		// removendo barra de ferramentas
+		show_admin_bar(false);
 
 	}
 endif;
@@ -141,6 +135,20 @@ function imobi_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'imobi_scripts' );
+
+
+
+
+function load_custom_wp_admin_style_and_js() {
+        // css
+        wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/inc/dash_theme/css/imobi_admin_style.css', false, '1.0.0' );
+        wp_enqueue_style( 'custom_wp_admin_css' );
+		wp_enqueue_style( 'wp-color-picker' ); 
+
+        wp_enqueue_script( 'js-custom-admin', get_template_directory_uri() . '/inc/dash_theme/js/admin_js.js', array( 'wp-color-picker', 'jquery-ui-tabs' ), false, true ); 
+
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style_and_js' );
 
 /**
  * Implement the Custom Header feature.
