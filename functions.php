@@ -91,7 +91,7 @@ add_action( 'after_setup_theme', 'imobi_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
-require_once '/inc/widgets.php';
+require_once 'inc/widgets.php';
 
 /**
  * Enqueue scripts and styles.

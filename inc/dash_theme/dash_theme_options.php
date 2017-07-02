@@ -27,6 +27,7 @@ function imobi_custom_settings() {
     // Para cada registro, deve ter uma função que crie o input com o name igual ao segundo parametro ($option_name)
     register_setting( 'imobi-settings-group', 'imobi_color_base' );
     register_setting( 'imobi-settings-group', 'imobi_second_color' );
+    register_setting( 'imobi-settings-group', 'slider_home' );
 
     add_settings_section( 'imobi-color-options', 'Opções de cores do Thema', 'imobi_colors_options', 'imobi_theme');
     // add_settings_section( $id, $title, $callback, $page );

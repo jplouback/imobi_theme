@@ -24,6 +24,7 @@
 			<?php // do_settings_sections( 'imobi_theme' ); 
 				$color_base = esc_attr( get_option( 'imobi_color_base' ) );
 				$second_color = esc_attr( get_option( 'imobi_second_color' ) );
+				$slide = esc_attr( get_option( 'slider_home' ) );
 
 				$sliders = '';
 				
@@ -38,9 +39,7 @@
 				}
 				
 				
-				echo "<pre>";
-				print_r($sliders);
-				die();
+				
 			?>
 
 			
@@ -51,7 +50,8 @@
 		</div>
 	  
 		<div id="tabs-2">
-		    <h2>Content heading 2</h2>
+		    <h2>Slide da home</h2>
+    		<input type="text" name="slider_home" class="" value="<?= $slide ?>" />
 		    
 		</div>
 		<div id="tabs-3">
