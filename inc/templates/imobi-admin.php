@@ -29,16 +29,16 @@
 				$sliders = '';
 				
 				if (is_plugin_active('smart-slider-3/smart-slider-3.php')) {
-				    // o plugin está ativado...
-				    echo "ativado";
+
 				    global $wpdb;
 					$sliders = $wpdb->get_results('SELECT id, title FROM ' . $wpdb->prefix . 'nextend2_smartslider3_sliders');
+
 				} else {
-				    echo "desativado";
-				    // O plugin está desativado...
+				    echo "Instale/Ative o plugin Smart Slide";
 				}
-				
-				
+				// echo "<pre>";
+				// print_r($sliders[0]->id);
+				// die();
 				
 			?>
 
@@ -51,8 +51,16 @@
 	  
 		<div id="tabs-2">
 		    <h2>Slide da home</h2>
-    		<input type="text" name="slider_home" class="" value="<?= $slide ?>" />
-		    
+    		<!-- <input type="text" name="slider_home" class="" value="<?= $slide ?>" /> -->
+
+		    <select name="slider_home" id="slider_home_define" class="form-control" required="required">
+		    	
+		    	<?php foreach ($sliders as $key => $slide) { ?>
+		    		<option value="<?= $slide->id?>"><?= $slide->title?></option>
+		    	<?php } ?>
+		    	
+		    </select>
+
 		</div>
 		<div id="tabs-3">
 		    <h2>Content heading 3</h2>
