@@ -1,5 +1,90 @@
 /* Css para admin imobi options page*/
 
-#imobi_form_admin {
-	padding-left: 50px;
+body {
+    background: #f1f1f1;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#imobi_form_admin .notice {
+	margin: 10px 0 20px;
+}
+
+#imobi_form_admin h3 {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+
+#imobi_form_admin .ui-tabs-panel h4 {
+	margin-top: 0;
+	color: #1e73be;
+	font-size: 20px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+
+#imobi_form_admin form {
+	margin-top: 30px;
+}
+
+.ui-tabs-vertical { width: 100% }
+.ui-tabs-vertical .ui-tabs-nav { 
+	float: left; 
+	width: 20%;
+	margin-top: 20px;
+}
+.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+.ui-tabs-vertical .ui-tabs-panel { 
+	padding: 20px 20px 20px 40px; 
+	float: left; 
+	width: 80%;
+	background: #fff;
+	min-height: 500px;
+	border-left: 1px solid #ccc;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#imobi_form_admin .ui-tabs-vertical .ui-tabs-nav li {
+	background: #fff;
+	line-height: 30px;
+	margin: 0 0 10px;
+	padding: 5px 10px;
+	border-radius: 5px 0px 0px 5px;
+	-moz-border-radius: 5px 0px 0px 5px;
+	-webkit-border-radius: 5px 0px 0px 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+#imobi_form_admin .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active, 
+#imobi_form_admin .ui-tabs-vertical .ui-tabs-nav li:hover {
+	background: #1e73be;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+#imobi_form_admin .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active a, 
+#imobi_form_admin .ui-tabs-vertical .ui-tabs-nav li:hover a {
+	color: #fff;
+	transition: all 0.3s;
+}
+#imobi_form_admin .ui-tabs-vertical .ui-tabs-nav li a:hover {
+	text-decoration: none;
+}
+
+.form-group .wp-picker-container {
+	top: 5px;
+	position: relative;
+	margin-left: 5px;
+}
+
+.form-group .wp-picker-container .iris-picker {
+	position: absolute;
+	z-index: 99;
+}
+
+#imobi_form_admin .form-inline .form-group {
+	display: block;
+	margin-bottom: 15px;
 }

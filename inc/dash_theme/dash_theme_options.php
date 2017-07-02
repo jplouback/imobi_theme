@@ -29,7 +29,7 @@ function imobi_custom_settings() {
     register_setting( 'imobi-settings-group', 'imobi_second_color' );
     register_setting( 'imobi-settings-group', 'slider_home' );
 
-    add_settings_section( 'imobi-color-options', 'Opções de cores do Thema', 'imobi_colors_options', 'imobi_theme');
+    //add_settings_section( 'imobi-color-options', 'Opções de cores do Thema', 'imobi_colors_options', 'imobi_theme');
     // add_settings_section( $id, $title, $callback, $page );
     // add_settings_field( 'color-base', 'Cor Principal', 'func_colorBase', 'imobi_theme', 'imobi-color-options');
     // add_settings_field( 'second-color', 'Cor Secundária', 'func_secoundColor', 'imobi_theme', 'imobi-color-options');
