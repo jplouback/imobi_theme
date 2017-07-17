@@ -178,3 +178,6 @@ require get_template_directory() . '/inc/customizer.php';
 
 
 require get_template_directory() . '/inc/dash_theme/dash_theme_options.php';
+
+
+require get_template_directory() . '/inc/teste_funcion.php';
